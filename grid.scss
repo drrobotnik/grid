@@ -104,6 +104,37 @@ $class-type: unquote(".");
 }
 
 
+
+/**
+ * Hide content off-screen without resorting to `display:none;`, also provide
+ * breakpoint specific hidden elements.
+ */
+@mixin accessibility{
+    border:0!important;
+    clip:rect(0 0 0 0)!important;
+    height:1px!important;
+    margin:-1px!important;
+    overflow:hidden!important;
+    padding:0!important;
+    position: absolute!important;
+    width:1px!important;
+}
+.accessibility,
+.visuallyhidden{
+    @include accessibility;
+}
+@if $responsive {
+    @each $name in $breakpoint-has-widths {
+        @include grid-media-query($name) {
+            .accessibility--#{$name},
+            .visuallyhidden--#{$name} {
+                @include accessibility;
+            }
+        }
+    }
+}
+
+
 /*============================================================================
   Drop relative positioning into silent classes which can't take advantage of
   the `[class*="push--"]` and `[class*="pull--"]` selectors.
