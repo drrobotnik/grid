@@ -38,6 +38,65 @@
 .grid__item.clear {
   clear: both; }
 
+/**
+ * Hide content off-screen without resorting to `display:none;`, also provide
+ * breakpoint specific hidden elements.
+ */
+.accessibility,
+.visuallyhidden {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important; }
+
+@media only screen and (max-width: 480px) {
+  .accessibility--small,
+  .visuallyhidden--small {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .accessibility--medium,
+  .visuallyhidden--medium {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
+@media only screen and (max-width: 768px) {
+  .accessibility--medium-down,
+  .visuallyhidden--medium-down {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
+@media only screen and (min-width: 769px) {
+  .accessibility--large,
+  .visuallyhidden--large {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
 /*============================================================================
   Drop relative positioning into silent classes which can't take advantage of
   the `[class*="push--"]` and `[class*="pull--"]` selectors.
