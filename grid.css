@@ -1,3 +1,52 @@
+/* ==========================================================================
+   #LAYOUT
+   ========================================================================== */
+/**
+ * Grid-like layout system.
+ *
+ * The layout object provides us with a column-style layout system. This file
+ * contains the basic structural elements, but classes should be complemented
+ * with width utilities, for example:
+ *
+ *   <div class="grid">
+ *     <div class="grid__item one-half">
+ *     </div>
+ *     <div class="grid__item one-half">
+ *     </div>
+ *   </div>
+ *
+ * The above will create a two-column structure in which each column will
+ * fluidly fill half of the width of the parent. We can have more complex
+ * systems:
+ *
+ *   <div class="grid">
+ *     <div class="grid__item one-whole medium--one-third">
+ *     </div>
+ *     <div class="grid__item one-half medium--one-third">
+ *     </div>
+ *     <div class="grid__item one-half medium--one-third">
+ *     </div>
+ *   </div>
+ *
+ * The above will create a system in which the first item will be 100% width
+ * until we enter our medium breakpoint, when it will become 33.333% width. The
+ * second and third items will be 50% of their parent, until they also become
+ * 33.333% width at the medium breakpoint.
+ *
+ * We can also manipulate entire layout systems by adding a series of modifiers
+ * to the `.grid` block. For example:
+ *
+ *   <div class="grid grid--rev">
+ *
+ * This will reverse the displayed order of the system so that it runs in the
+ * opposite order to our source, effectively flipping the system over.
+ *
+ *   <div class="grid grid--full">
+ *
+ * This will remove the gutter from the grid system
+ *
+ * There are plenty more options available to us: explore them below.
+ */
 /*============================================================================
   #Breakpoint and Grid Variables
 ==============================================================================*/
@@ -133,6 +182,26 @@
     direction: ltr;
     text-align: left;
     float: right; }
+
+.grid--tiny {
+  margin-left: -8px; }
+  .grid--tiny > .grid__item {
+    padding-left: 8px; }
+
+.grid--small {
+  margin-left: -15px; }
+  .grid--small > .grid__item {
+    padding-left: 15px; }
+
+.grid--large {
+  margin-left: -60px; }
+  .grid--large > .grid__item {
+    padding-left: 60px; }
+
+.grid--huge {
+  margin-left: -120px; }
+  .grid--huge > .grid__item {
+    padding-left: 120px; }
 
 /* Gutterless grids have all the properties of regular grids, minus any spacing. */
 .grid--full {
